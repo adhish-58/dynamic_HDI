@@ -1,0 +1,61 @@
+/*
+d3.csv("A229RX0.csv", function(data) {
+  console.log(data[0]);
+});
+*/
+
+/*
+/*
+function csv
+{
+  d3.csv("A229RX0.csv", function(data) {
+    data.forEach(function(d) {
+    d.year = +d.year;
+    d["real_PCI"] = +d["real_PCI"];
+  });
+  console.log(data[0]);
+});
+}
+csv();
+*/
+<!DOCTYPE
+<html>
+  <script>
+    queue()
+      .defer(d3.csv, "A229RX0.csv")
+      .defer(d3.csv, "SPDYNLE00INUSA.csv")
+      .await(analyze);
+
+      function analyze(error, real_PCI, LifeExpectancy)
+        {
+        real_PCI.forEach(function(d1) {
+          d1.year = +d1.year;
+
+          d1["real_PCI"] = +d1["real_PCI"];
+        });
+
+        LifeExpectancy.forEach(function(d) {
+          d.year = +d.year;
+          d["LifeExpectancy"] = +d["LifeExpectancy"];
+        });
+        if(error)
+          {
+            console.log(error);
+          }
+          console.log(cities[0]);
+          console.log(animals[0]);
+        }
+  </script>
+
+/*
+d3.csv("A229RX0.csv", function(d) {
+  return {
+    year : +d.YEAR,
+    per capita income : +d.A229RX0,
+    population : +d.population,
+    land_area : +d["land area"]
+  };
+}, function(data) {
+  console.log(data[0]);
+});
+*/

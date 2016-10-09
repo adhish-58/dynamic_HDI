@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+  <title> DHDI html </title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <meta charset="utf-8">
+<body>
+  <h1> DYNAMIC HDI </h1>
+  <p> Dynamic HDI is this and that. </p>
+  <hr>
+  <h2> What exactly is Dynamic HDI? </h2>
+  <p title="What is in this website?"> This is my first paragraph. <br>
+    Visit this website for more details about the UN HDI process </p>
+    <pre> This     is   my formatted text </pre>
+    <hr>
+  <a href = "http://www.hdr.undp.org/"> This is the link. </a>
+  <img src="Worldmap-hdi2004.jpg" alt="HDI picture" height="142" width="106">
+
+  <script>
+      queue()
+      .defer(d3.csv, "A229RX0.csv")
+      .defer(d3.csv, "SPDYNLE00INUSA.csv")
+      .await(analyze);
+
+      function analyze(error, real_PCI, LifeExpectancy)
+        {
+        real_PCI.forEach(function(d1) {
+          d1.year = +d1.year;
+
+          d1["real_PCI"] = +d1["real_PCI"];
+        });
+
+        LifeExpectancy.forEach(function(d) {
+          d.year = +d.year;
+          d["LifeExpectancy"] = +d["LifeExpectancy"];
+        });
+        if(error)
+          {
+            console.log(error);
+          }
+          console.log(cities[0]);
+          console.log(animals[0]);
+        }
+  </script>
+
+
+</body>
+<html>
